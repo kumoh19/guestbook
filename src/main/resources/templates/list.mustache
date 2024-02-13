@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--<meta name="_csrf" th:content="${_csrf.token}"/>-->
+</head>
+
+<body>
+<center>
+<h1>글목록</h1>
+
+<table border=1>
+<!--####################################################-->
+ <tr><td><b>no</b></td>
+ <td><b>title</b></td>
+ <!--<td><b>content</b></td>-->
+ <td><b>writer</b></td>
+ <td><b>date</b></td>
+ <td><b>view</b></td></tr>
+{{ #html_data_pack }} <!--섹션시작-->
+
+ <tr><td> <a href="/read_db?no={{no}}">{{no}}</a></td>
+ <td><a href="/read_db?no={{no}}">{{ title }}</a></td>
+ <!--<td>{{ content }}</td>-->
+ <td>{{ writer }}</td>
+ <td>{{ date }}</td>
+ <td>{{ view }}</td></tr>
+
+{{ /html_data_pack }} <!--섹션끝-->
+<!--####################################################-->
+{{ ^html_data_pack }} <!--반전섹션시작-->
+
+<h1><font color=red>No Result !!</h1>
+
+{{ /html_data_pack }} <!--반전섹션끝-->
+<!--####################################################-->
+</table> 
+</center>
+</body>
+</html>

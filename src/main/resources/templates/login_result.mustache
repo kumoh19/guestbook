@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--<meta name="_csrf" th:content="${_csrf.token}"/>-->
+</head>
+
+<body>
+<center>
+<h1>회원정보</h1>
+
+<table border=1>
+<!--####################################################-->
+{{ #html_login_info }} <!--섹션시작-->
+
+
+ <tr><td>{{ m_id }}</td>
+ <td>{{ m_pw }}</td></tr>
+
+{{ /html_login_info }} <!--섹션끝-->
+<!--####################################################-->
+{{ ^html_login_info }} <!--반전섹션시작-->
+
+<h1><font color=red>해당 사용자가 존재하지 않습니다</h1>
+
+{{ /html_login_info }} <!--반전섹션끝-->
+<!--####################################################-->
+</table> 
+</center>
+</body>
+</html>
